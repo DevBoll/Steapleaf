@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'enums.dart';
+import '../enums/enums.dart';
 import 'brew_variant.dart';
 import 'infusion_log.dart';
 
