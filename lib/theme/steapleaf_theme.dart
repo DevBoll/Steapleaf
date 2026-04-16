@@ -8,19 +8,19 @@
 library steapleaf_theme;
 
 // ─── Theme Entry Point ────────────────────────────────────────────────────────
-export 'theme/app_theme.dart';
+export 'app_theme.dart';
 
 // ─── Tokens ───────────────────────────────────────────────────────────────────
-export 'theme/tokens/ref_palette.dart';
-export 'theme/tokens/tea_type_tokens.dart';
-export 'theme/tokens/text_theme.dart';
-export 'theme/tokens/shapes.dart';
-export 'theme/tokens/spacing.dart';
-export 'theme/tokens/motion.dart';
+export 'tokens/ref_palette.dart';
+export 'tokens/tea_type_tokens.dart';
+export 'tokens/text_theme.dart';
+export 'tokens/shapes.dart';
+export 'tokens/spacing.dart';
+export 'tokens/motion.dart';
 
 // ─── Extensions ───────────────────────────────────────────────────────────────
-export 'theme/extensions/steapleaf_theme_extension.dart';
+export 'extensions/steapleaf_theme_extension.dart';
 
 // ─── Kanji Library ────────────────────────────────────────────────────────────
-export 'theme/tokens/kanji_tokens.dart';
-export 'theme/widgets/kanji_icon.dart';
+export 'tokens/kanji_tokens.dart';
+export '../core/widgets/kanji_icon.dart';
