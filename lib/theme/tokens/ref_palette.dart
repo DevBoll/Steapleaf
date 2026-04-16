@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 
-/// SteapLeaf Reference Palette
-///
-/// Rohe Farbwerte – NIEMALS direkt in Widgets verwenden.
-/// Nur zur Definition der System-Tokens in [SteapLeafColorScheme] gedacht.
-///
-/// Namensschema: ref.palette.[family][tone]
 abstract final class RefPalette {
   RefPalette._();
 
-  // ─── Primary · Warm Red (Camellia) ────────────────────────────────────────
+  // Primary · Warm Red (Camellia) 
   static const Color red0   = Color(0xFF000000);
   static const Color red10  = Color(0xFF410002);
   static const Color red20  = Color(0xFF690005);
@@ -20,7 +14,7 @@ abstract final class RefPalette {
   static const Color red95  = Color(0xFFFFEDEA);
   static const Color red99  = Color(0xFFFFFBFF);
 
-  // ─── Neutral · Warm Paper (Washi) ─────────────────────────────────────────
+  // Neutral · Warm Paper (Washi) 
   static const Color neutral10  = Color(0xFF1A1714);
   static const Color neutral20  = Color(0xFF302D2A);
   static const Color neutral30  = Color(0xFF48433F);
@@ -32,14 +26,14 @@ abstract final class RefPalette {
   static const Color neutral99  = Color(0xFFF5F0E8);
   static const Color neutral100 = Color(0xFFFFFFFF);
 
-  // ─── Neutral Variant · Warm Ink ───────────────────────────────────────────
+  // Neutral Variant · Warm Ink
   static const Color neutralVariant30 = Color(0xFF52443A);
   static const Color neutralVariant50 = Color(0xFF7D6E62);
   static const Color neutralVariant80 = Color(0xFFC4B5A8);
   static const Color neutralVariant90 = Color(0xFFDDD0C7);
   static const Color neutralVariant95 = Color(0xFFEDE3DA);
 
-  // ─── Dark Theme · Warm Night (Yoru) ───────────────────────────────────────
+  // Dark Theme · Warm Night (Yoru)
   static const Color darkBackground     = Color(0xFF1C1610);
   static const Color darkSurface        = Color(0xFF262018);
   static const Color darkSurfaceVariant = Color(0xFF312A21);

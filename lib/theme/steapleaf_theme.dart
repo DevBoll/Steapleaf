@@ -23,4 +23,9 @@ export 'extensions/steapleaf_theme_extension.dart';
 
 // ─── Kanji Library ────────────────────────────────────────────────────────────
 export 'tokens/kanji_tokens.dart';
-export '../core/widgets/kanji_icon.dart';
+export 'widgets/kanji_icon.dart';
+
+// ─── Widgets ──────────────────────────────────────────────────────────────────
+export 'widgets/washi_card.dart';
+export 'widgets/action_bar.dart';
+export 'widgets/dashed_divider.dart';

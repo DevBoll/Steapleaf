@@ -1,38 +1,28 @@
 import 'package:flutter/material.dart';
 
-/// SteapLeaf Typografie-Tokens
-///
-/// Drei Schrift-Familien mit klaren semantischen Rollen:
-/// - [serifFamily]  → Noto Serif JP – Titel, Tee-Namen, Hero-Text
-/// - [bodyFamily]   → Noto Sans JP  – Fließtext, Formulare, Labels
-/// - [monoFamily]   → DM Mono       – Section-Labels, Metadaten, Brühparameter
-///
-/// HINWEIS: Google Fonts Paket wird vorausgesetzt.
-/// Alternativ die Fonts unter assets/fonts/ ablegen und in pubspec.yaml registrieren.
+
 abstract final class SteapLeafTextTheme {
   SteapLeafTextTheme._();
 
-  // ─── Font Families ────────────────────────────────────────────────────────
+  // Font Families 
 
   static const String serifFamily = 'NotoSerifJP';
   static const String bodyFamily  = 'NotoSansJP';
   static const String monoFamily  = 'DMMono';
 
-  // ─── Kanji-Größen ─────────────────────────────────────────────────────────
+  // Kanji-Größen 
 
-  /// Kleine Kanji-Icons neben Labels (始, 新, 保, 録, 法, 味)
+  /// Kleine Kanji-Icons neben Labels
   static const double kanjiIconSize      = 20.0;
 
-  /// FAB-Kanji (新, 録 im FAB-Button)
+  /// FAB-Kanji
   static const double kanjiIconLargeSize = 28.0;
 
-  /// Kanji im Tee-Avatar (緑, 青)
+  /// Kanji im Tee-Avatar
   static const double kanjiHeroSize      = 64.0;
 
-  /// Großes dekoratives Kanji in Header (茶)
+  /// Großes dekoratives Kanji
   static const double kanjiDecorativeSize = 96.0;
-
-  // ─── Text Styles ──────────────────────────────────────────────────────────
 
   static TextStyle get displayLarge => const TextStyle(
     fontFamily: serifFamily,
@@ -112,7 +102,7 @@ abstract final class SteapLeafTextTheme {
     letterSpacing: 0.2, height: 1.3,
   );
 
-  // ─── SteapLeaf Custom Styles ──────────────────────────────────────────────
+  // SteapLeaf Custom Styles
 
   /// Für Section-Labels in Großbuchstaben (AROMA, KIROKU, KURA)
   static TextStyle get sectionLabel => const TextStyle(
@@ -128,21 +118,6 @@ abstract final class SteapLeafTextTheme {
     letterSpacing: 0.05, height: 1.4,
   );
 
-  /// Japanisches Datum im Home-Header (令和8年 · MITTWOCH)
-  static TextStyle get japaneseDate => const TextStyle(
-    fontFamily: monoFamily,
-    fontSize: 11, fontWeight: FontWeight.w400,
-    letterSpacing: 0.15, height: 1.3,
-  );
-
-  /// Dekoratives Kanji im Screen-Header
-  static TextStyle kanjiDecorative({double? size}) => TextStyle(
-    fontFamily: serifFamily,
-    fontSize: size ?? kanjiDecorativeSize,
-    fontWeight: FontWeight.w300,
-    height: 1.0,
-  );
-
   /// Kanji in Avatar-Kreisen
   static TextStyle kanjiAvatar({double? size}) => TextStyle(
     fontFamily: serifFamily,
@@ -151,7 +126,7 @@ abstract final class SteapLeafTextTheme {
     height: 1.0,
   );
 
-  // ─── Flutter TextTheme ────────────────────────────────────────────────────
+  // Flutter TextTheme 
 
   /// Vollständiges [TextTheme] für ThemeData.
   static TextTheme get textTheme => TextTheme(

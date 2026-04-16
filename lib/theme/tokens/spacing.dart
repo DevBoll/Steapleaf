@@ -1,14 +1,9 @@
-/// SteapLeaf Spacing Tokens
-///
-/// Alle Abstände basieren auf dem 4dp-Raster.
-/// Verwendung: `SizedBox(height: SteapLeafSpacing.md)`
-///
-/// REGEL: Niemals Rohwerte (z.B. 16.0) hardcoden –
-/// immer auf diese Konstanten referenzieren.
+
 abstract final class SteapLeafSpacing {
   SteapLeafSpacing._();
 
-  // ─── Basis-Skala ──────────────────────────────────────────────────────────
+  // Basis-Skala 
+  
   /// 2dp – Icon-zu-Text innerhalb eines Buttons
   static const double micro = 2.0;
 
@@ -33,7 +28,8 @@ abstract final class SteapLeafSpacing {
   /// 48dp – Screen-Top-Padding, großer Leerraum vor Titeln
   static const double xxl   = 48.0;
 
-  // ─── Layout-Spezifische Tokens ────────────────────────────────────────────
+  // Layout-Spezifische Tokens
+
   /// Seitlicher Innenabstand aller Screens (M3-Standard)
   static const double screenPaddingHorizontal = md;
 
@@ -49,7 +45,8 @@ abstract final class SteapLeafSpacing {
   /// Abstand zwischen Sections in Create/Edit-Screens
   static const double sectionGap = xl;
 
-  // ─── Komponenten-Größen ───────────────────────────────────────────────────
+  // Komponenten-Größen
+
   /// Standard-Höhe von Listen-Einträgen (Teesammlung, Session-Liste)
   static const double listItemHeight = 72.0;
 
