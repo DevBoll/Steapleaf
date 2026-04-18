@@ -89,7 +89,10 @@ class _CollectionScreenState extends State<CollectionScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 12, 16, 10),
+                      padding: const EdgeInsets.fromLTRB(
+                          SteapLeafSpacing.md, SteapLeafSpacing.sm,
+                          SteapLeafSpacing.md, SteapLeafSpacing.xs,
+                        ),
                       child: Semantics(
                         label: 'Tee suchen',
                         child: TextField(
@@ -118,19 +121,20 @@ class _CollectionScreenState extends State<CollectionScreen> {
                         onAdd: () => _openEdit(context),
                 )
                     : ListView.separated(
-                      padding: const EdgeInsets.fromLTRB(16, 4, 16, 100),
-                        itemCount: sortedTeas.length,
-                        separatorBuilder: (_, _) => Divider(
-                          height: 1,
-                          thickness: 0.5,
-                          color: colorScheme.outlineVariant,
+                      padding: const EdgeInsets.fromLTRB(
+                          SteapLeafSpacing.md, SteapLeafSpacing.tiny,
+                          SteapLeafSpacing.md,
+                          SteapLeafSpacing.xxl + SteapLeafSpacing.fabSize,
                         ),
+                        itemCount: sortedTeas.length,
+                        separatorBuilder: (_, _) => const DashedDivider(),
                         itemBuilder: (_, i) => _TeaRow(sortedTeas[i]),
                       ),
                     ),
                   ],
                 ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'collection_fab',
         tooltip: 'Tee hinzufügen',
         onPressed: () => _openEdit(context),
         child: Text(
@@ -248,7 +252,7 @@ class _SortRow extends StatelessWidget {
     final favActive = provider.filterFavorites;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+      padding: const EdgeInsets.symmetric(horizontal: SteapLeafSpacing.md),
       child: Row(
         children: [
           TextButton.icon(
@@ -262,14 +266,14 @@ class _SortRow extends StatelessWidget {
           ),
           const Spacer(),
           _TypeFilterDropdown(provider: provider),
-          const SizedBox(width: 4),
+          const SizedBox(width: SteapLeafSpacing.tiny),
           FilterChip(
             label: const Text('♥ Favoriten'),
             selected: favActive,
             showCheckmark: false,
             onSelected: (_) => provider.setFilterFavorites(!favActive),
           ),
-          const SizedBox(width: 4),
+          const SizedBox(width: SteapLeafSpacing.tiny),
           FilterChip(
             label: const Text('Im Besitz'),
             selected: stockActive,
@@ -307,22 +311,22 @@ class _TeaRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TeaThumb(tea: tea, size: 60),
-              const SizedBox(width: 13),
+              const SizedBox(width: SteapLeafSpacing.sm),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(tea.name, style: textTheme.titleMedium),
-                    const SizedBox(height: 4),
+                    const SizedBox(height: SteapLeafSpacing.tiny),
                     Row(
                       children: [
                         TeaTypeChip(type: tea.type),
                         if (tea.origin?.isNotEmpty ?? false) ...[
-                          const SizedBox(width: 6),
+                          const SizedBox(width: SteapLeafSpacing.tiny),
                           Expanded(
                             child: Text(
-                              tea.origin!.toUpperCase(),
+                              tea.origin ?? '',
                               style: textTheme.labelSmall?.copyWith(
                                 color: colorScheme.onSurfaceVariant,
                                 letterSpacing: 1.2,
@@ -344,7 +348,7 @@ class _TeaRow extends StatelessWidget {
                     StarRating(rating: tea.rating, size: 14)
                   else
                     const SizedBox(height: 14),
-                  const SizedBox(height: 4),
+                  const SizedBox(height: SteapLeafSpacing.tiny),
                   Icon(
                     tea.isFavorite ? Icons.favorite : Icons.favorite_border,
                     size: 14,
@@ -380,14 +384,14 @@ class _EmptyState extends StatelessWidget {
         children: [
           Icon(Icons.local_drink_outlined,
               size: 64, color: colorScheme.outlineVariant),
-          const SizedBox(height: 16),
+          const SizedBox(height: SteapLeafSpacing.md),
           Text(
             isEmpty ? 'Deine Sammlung ist noch leer' : 'Keine Treffer',
             style: textTheme.bodyMedium
                 ?.copyWith(color: colorScheme.onSurfaceVariant),
           ),
           if (isEmpty) ...[
-            const SizedBox(height: 20),
+            const SizedBox(height: SteapLeafSpacing.lg),
             OutlinedButton(
               onPressed: onAdd,
               child: const Text('Ersten Tee hinzufügen'),

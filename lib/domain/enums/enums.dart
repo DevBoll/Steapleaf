@@ -122,3 +122,11 @@ enum BrewStyle {
     );
   }
 }
+
+const List<String> kStandardAdditions = [
+  'Milch',
+  'Zucker',
+  'Honig',
+  'Zitrone',
+  'Kondensmilch',
+];
